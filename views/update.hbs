@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        #form-inforproduct{
+            background-color:rgb(219, 208, 208);
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #btn-submit-center{
+            text-align: center;
+        }
+        #btn-back-to-home{
+            margin-left: 20px;
+        }
+
+        #update-footer-css{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin-top: 10px;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id = "btn-back-to-home">
+        <a class="btn btn-primary" href="/" role="button">Back to Home</a>
+    </div>
+<div id="form-inforproduct">
+    <form action="/doUpdate" method="POST">
+        <fieldset align="center">
+            <legend text-align="center">Update product</legend>
+        </fieldset> 
+            {{!-- <div class="form-group">   
+                <label for="formGroupExampleInput" > <b>ID {{model._id}}</b> </label>             
+            </div> --}}
+            <input type="hidden" name="id" value="{{model._id}}">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Name</label>
+                <input type="text" name="txtProductName" class="form-control" id="formGroupExampleInput" placeholder="Name" value="{{model.productName}}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Price</label>
+                <input name="txtProductPrice" type="text" class="form-control" id="formGroupExampleInput" placeholder="Price" value="{{model.productPrice}}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Color</label>
+                <input type="text" name="txtColor" class="form-control" id="formGroupExampleInput" placeholder="Color" value="{{model.color}}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Producer</label>
+                <input type="text" name="txtProducer" class="form-control" id="formGroupExampleInput" placeholder="Producer" value="{{model.producer}}">
+            </div>
+            <div id = "btn-submit-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+    </form>
+</div>
+<div id="update-footer-css">
+        {{>footer}}
+</div>
+
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
